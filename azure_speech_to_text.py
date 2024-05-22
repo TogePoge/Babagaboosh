@@ -112,9 +112,9 @@ class SpeechToTextManager:
         done = False
         
         # Optional callback to print out whenever a chunk of speech is being recognized. This gets called basically every word.
-        #def recognizing_cb(evt: speechsdk.SpeechRecognitionEventArgs):
-        #    print('RECOGNIZING: {}'.format(evt))
-        #self.azure_speechrecognizer.recognizing.connect(recognizing_cb)
+        def recognizing_cb(evt: speechsdk.SpeechRecognitionEventArgs):
+            print('RECOGNIZING: {}'.format(evt))
+        self.azure_speechrecognizer.recognizing.connect(recognizing_cb)
 
         # Optional callback to print out whenever a chunk of speech is finished being recognized. Make sure to let this finish before ending the speech recognition.
         def recognized_cb(evt: speechsdk.SpeechRecognitionEventArgs):

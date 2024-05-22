@@ -3,7 +3,7 @@ import tiktoken
 import os
 from rich import print
 
-def num_tokens_from_messages(messages, model='gpt-4'):
+def num_tokens_from_messages(messages, model='gpt-3.5-turbo-0125'):
   """Returns the number of tokens used by a list of messages.
   Copied with minor changes from: https://platform.openai.com/docs/guides/chat/managing-tokens """
   try:
@@ -45,7 +45,7 @@ class OpenAiManager:
 
         print("[yellow]\nAsking ChatGPT a question...")
         completion = self.client.chat.completions.create(
-          model="gpt-4",
+          model="gpt-3.5-turbo-0125",
           messages=chat_question
         )
 
@@ -71,7 +71,7 @@ class OpenAiManager:
 
         print("[yellow]\nAsking ChatGPT a question...")
         completion = self.client.chat.completions.create(
-          model="gpt-4",
+          model="gpt-3.5-turbo-0125",
           messages=self.chat_history
         )
 
